@@ -36,6 +36,17 @@
         android:hint="Enter Roll no."
        />
 
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_margin="5dp"
+        android:inputType="textPersonName"
+        android:hint="Enter Email Address"
+        />
+
     <Spinner
         android:id="@+id/spinnerCourse"
         android:layout_width="match_parent"

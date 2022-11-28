@@ -18,6 +18,7 @@ public class InsertingDataActivity extends AppCompatActivity {
 
     EditText etName;
     EditText etRollno;
+    EditText etEmail;
     Spinner spinnerCourses;
     Button btnInsertData;
     DatabaseReference studentDbRef;
@@ -32,9 +33,11 @@ public class InsertingDataActivity extends AppCompatActivity {
 
         etName = findViewById(R.id.etName);
         etRollno = findViewById(R.id.etRollno);
+        etEmail = findViewById(R.id.etEmail);
         spinnerCourses = findViewById(R.id.spinnerCourse);
         btnInsertData = findViewById(R.id.btnInsertData);
         studentDbRef = FirebaseDatabase.getInstance().getReference("Students");
+
         btnInsertData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -66,11 +69,12 @@ public class InsertingDataActivity extends AppCompatActivity {
     private void insertStudentData(){
         String name = etName.getText().toString();
         String rollno = etRollno.getText().toString();
+        String email = etEmail.getText().toString();
         String course = spinnerCourses.getSelectedItem().toString();
 
         String id = studentDbRef.push().getKey();
 
-        Students students = new Students(id,name,rollno,course);
+        Students students = new Students(id,name,rollno,email,course);
         assert id != null;
         studentDbRef.child(id).setValue(students);
 

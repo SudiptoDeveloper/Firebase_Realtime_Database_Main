@@ -91,6 +91,7 @@ import java.util.List;
             //create views refernces
             final EditText etUpdateName = mDialogView.findViewById(R.id.etUpdateName);
             final EditText etUpdateRollno = mDialogView.findViewById(R.id.etUpdateRollno);
+            final EditText etUpdateEmail = mDialogView.findViewById(R.id.etUpdateEmail);
             final Spinner mSpinner = mDialogView.findViewById(R.id.updateSpinner);
             Button btnUpdate = mDialogView.findViewById(R.id.btnUpdate);
             Button btnDelete = mDialogView.findViewById(R.id.btnDelete);
@@ -108,9 +109,10 @@ import java.util.List;
 
                     String newName = etUpdateName.getText().toString();
                     String newRollno = etUpdateRollno.getText().toString();
+                    String newEmail = etUpdateEmail.getText().toString();
                     String newCourse = mSpinner.getSelectedItem().toString();
 
-                    updateData(id,newName,newRollno,newCourse);
+                    updateData(id,newName,newRollno,newEmail,newCourse);
 
                     Toast.makeText(ViewActivity.this, "Record Updated", Toast.LENGTH_SHORT).show();
                     alertDialog.dismiss();
@@ -152,11 +154,11 @@ import java.util.List;
             });
         }
 
-        private void updateData(String id, String name, String rollno, String course){
+        private void updateData(String id, String name, String rollno, String email, String course){
 
             //creating database reference
             DatabaseReference DbRef = FirebaseDatabase.getInstance().getReference("Students").child(id);
-            Students students = new Students(id, name, rollno, course);
+            Students students = new Students(id, name, rollno,email, course);
             DbRef.setValue(students);
         }
 

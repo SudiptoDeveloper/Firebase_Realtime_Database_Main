@@ -5,15 +5,17 @@ public class Students {
     String id;
     String name;
     String rollno;
+    String email;
     String course;
 
     public Students() {
     }
 
-    public Students(String id,String name, String rollno, String course) {
+    public Students(String id,String name, String rollno, String email, String course) {
         this.id = id;
         this.name = name;
         this.rollno = rollno;
+        this.email = email;
         this.course = course;
     }
 
@@ -27,6 +29,10 @@ public class Students {
 
     public String getRollno() {
         return rollno;
+    }
+
+    public String getEmail() {
+        return email;
     }
 
     public String getCourse() {

@@ -35,12 +35,14 @@ public class ListAdapter extends ArrayAdapter {
 
         TextView tvName = listItemView.findViewById(R.id.tvName);
         TextView tvRollno = listItemView.findViewById(R.id.tvRollno);
+        TextView tvEmail = listItemView.findViewById(R.id.tvEmail);
         TextView tvCourse = listItemView.findViewById(R.id.tvCourse);
 
         Students students = studentsList.get(position);
 
         tvName.setText(students.getName());
         tvRollno.setText(students.getRollno());
+        tvEmail.setText(students.getEmail());
         tvCourse.setText(students.getCourse());
 
         return listItemView;
