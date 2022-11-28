@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Firebase_Realtime_database</string>
+
+    <string-array name="courses">
+        <item>CSE</item>
+        <item>EEE</item>
+        <item>MSE</item>
+    </string-array>
+</resources>
